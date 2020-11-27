@@ -20,7 +20,6 @@ class ProdutoController extends Controller
         return view('produto.pesquisar')->with('produtos', $produtos);
     }
 
-
     public function mostrar_inserir()
     {
         return view('produto.inserir');
@@ -49,7 +48,7 @@ class ProdutoController extends Controller
         $produto->save();
 
         // Criado uma mensagem para o usuário
-        $mensagem = "Produto Inserido com Sucesso!";
+        $mensagem = 'Produto Inserido com Sucesso!';
 
         // Chamando a view produto.inserir e enviando a mensagem criada
         return view('produto.inserir')->with('mensagem', $mensagem);
@@ -57,14 +56,14 @@ class ProdutoController extends Controller
 
     public function alterar(){
         $id = Input::get('id');
-        $p = Produto::find($id);
+        $produto = Produto::find($id);
 
-        $p->descricao = Input::get('descricao');
-        $p->quantidade = Input::get('quantidade');
-        $p->valor = Input::get('valor');
-        $p->data_vencimento = Input::get('data_vencimento');
+        $produto->descricao = Input::get('descricao');
+        $produto->quantidade = Input::get('quantidade');
+        $produto->valor = Input::get('valor');
+        $produto->data_vencimento = Input::get('data_vencimento');
 
-        $p->save();
+        $produto->save();
 
         $mensagem = "Produto alterado com sucesso!";
         $produtos = Produto::all();
@@ -79,7 +78,7 @@ class ProdutoController extends Controller
         $produto->delete();
 
         // Criando uma mensagem para ser enviada a view produto.pesquisar
-        $mensagem = "Produto excluído com sucesso!";
+        $mensagem = 'Produto excluído com sucesso!';
 
         // Capturando objetos para enviar a view produto.pesquisar
         $produtos = Produto::all();

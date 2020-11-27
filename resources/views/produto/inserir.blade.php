@@ -34,7 +34,9 @@
             <input type="date" id="data_vencimento" name="data_vencimento" class="form-control">
         </div>
         <div>Os campos marcados com <span class="text-danger">*</span> não podem estar em branco.</div>
+        <a href="/produtos/pesquisar/" class="btn btn-warning"><< Voltar</a>
         <input type="submit" class="btn btn-success mt-2" value="Inserir">
+
     </form>
 </div>
 </body>

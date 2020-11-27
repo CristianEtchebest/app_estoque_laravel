@@ -22,7 +22,10 @@
             <input type="text" id="descricao" name="descricao" class="form-control ml-2" />
         </div>
         <input type="submit" class="btn btn-primary ml-2" value="Pesquisar" />
+        <a href="/produtos/inserir" class="btn btn-success">Cadastrar Novo</a>
+
     </form>
+
 
     @if(count($produtos) == 0)
         <div class="alert alert-danger mt-2">Nenhum produto encontrado com essa descrição!</div>
@@ -37,15 +40,15 @@
                 <th></th>
                 <th></th>
             </tr>
-            @foreach ($produtos as $p)
+            @foreach ($produtos as $produto)
                 <tr>
-                    <td>{{$p->id}}</td>
-                    <td>{{$p->descricao}}</td>
-                    <td>{{ $p->quantidade }}</td>
-                    <td>{{ $p->valor }}</td>
-                    <td>{{ $p->data_vencimento }}</td>
-                    <td><a href="/produtos/excluir/{{$p->id}}"><button class="btn btn-danger">Excluir</button></a></td>
-                    <td><a href="/produtos/alterar/{{$p->id}}"><button class="btn btn-warning">Alterar</button></a></td>
+                    <td>{{$produto->id}}</td>
+                    <td>{{$produto->descricao}}</td>
+                    <td>{{$produto->quantidade }}</td>
+                    <td>{{$produto->valor }}</td>
+                    <td>{{$produto->data_vencimento }}</td>
+                    <td><a href="/produtos/excluir/{{$produto->id}}"><button class="btn btn-danger">Excluir</button></a></td>
+                    <td><a href="/produtos/alterar/{{$produto->id}}"><button class="btn btn-warning">Alterar</button></a></td>
                 </tr>
             @endforeach
         </table>
